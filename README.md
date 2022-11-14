@@ -1,5 +1,5 @@
 # <span style='color: orange'>※ 파이썬 공부 내용 정리</span>
-
+![파이썬이미지](https://greenart.co.kr/upimage/subject/group5_7.jpg)
 # <span style='color: skyblue'>스터디</span>
 
 - 주중 매일 19시~22시
