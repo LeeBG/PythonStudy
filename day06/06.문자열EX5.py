@@ -1,0 +1,7 @@
+print("--입력구간--")
+name = input("성명입력 >>> ")
+print("--출력구간--")
+print("성명 :"+name)
+print("성:"+name[0])
+print("명:"+name[1]+name[2])
+print("명:"+name[1:])
