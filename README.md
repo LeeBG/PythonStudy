@@ -1,9 +1,31 @@
 # <span style='color: orange'>※ 파이썬 공부 내용 정리</span>
+
 ![파이썬이미지](https://greenart.co.kr/upimage/subject/group5_7.jpg)
+
 # <span style='color: skyblue'>스터디</span>
 
-- 주중 매일 19시~22시
+- 주중 매일 19시 ~ 22시
+
+# 블로그
+
 - 네이버 블로그 정리 : [Blog](https://blog.naver.com/donny1848/222922708704)
+
+# Language 
+- Python  3.11
+
+# Tools & Version
+- Visual Studio Code 1.71.0
+
+# 사용 확장(Extension)프로그램
+- Python
+- Bracket Pair Colorizer2
+- Atom One Dark Theme
+- Bracket Peek
+- Code runner
+- Error Lens
+- IntelliCode
+- Korean Language Pack for Visual Studio Code
+- Material Icon Pack
 
 ## <span style='color: #ffd33d'>일자별 정리표</span>
 
