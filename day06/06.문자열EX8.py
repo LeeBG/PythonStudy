@@ -10,7 +10,40 @@ mms = "WEB발신\n[KB]06/07 18:33 998XX 10,000 출금"
 종류 : 출금
 """
 
-mms = "WEB발신\n[신한]06/07 18:33 998XX 1,000,000,000 출금"
+"""
+# 풀이
+mms = "WEB발신\n[KB]06/07 18:33 998XX 1,000,000,000 입금"
+
+index = mms.find("[")
+mms = mms[index+1:]
+index = mms.find("]")
+bank = mms[:index]
+
+mms = mms[index+1:]
+index = mms.find("/")
+month = mms[:index]
+
+mms = mms[index+1:]
+index = mms.find(" ")
+day = mms[:index]
+
+mms = mms[index+7:]
+index = mms.find(" ")
+account = mms[:index]
+
+mms = mms[index+1:] 
+index = mms.find(" ")   # 필요한 부분을 찾고
+money = mms[:index]     # 금액정보를 분리
+
+what = mms[index+1:]
+
+print(bank)
+print(month,day)
+print(account)
+print(money)
+print(what)
+
+"""
 
 print("은행 : "+mms[mms.find("[")+1:mms.find("]")]+" 은행")
 print("날짜 : "+mms[mms.find("]")+1:mms.find("/")]+"월 "
