@@ -6,24 +6,36 @@
 # 2) 3회를 넘어서도 여전히 음수이면 
 # <잘못된 입력입니다>를 출력하세요.
 
-error_count = 0
-num = int(input("통과하는 역의 수를 입력하세요 >> "))
-if num < 0 and error_count == 0:
-    num = int(input("통과하는 역의 수를 입력하세요 >> "))
-    print(num)
-    error_count += 1
-if num < 0 and error_count == 1:
-    num = int(input("통과하는 역의 수를 입력하세요 >> "))
-    print(num)
-    error_count += 1
-if num < 0 and error_count == 2:
-    num = int(input("통과하는 역의 수를 입력하세요 >> "))
-    error_count += 1
-elif num < 0 and error_count == 3:
+# 첫번쨰 형태
+count = int(input("통과하는 역의 수를 입력 >> "))
+if count < 0:
+    count = int(input("잘못되었습니다.\n통과하는 역의 수량 >> "))
+    if count < 0:
+        count = int(input("잘못되었습니다.\n통과하는 역의 수량 >> "))
+        if count < 0:
+            count = int(input("잘못되었습니다.\n통과하는 역의 수량 >> "))
+            if count < 0:
+                print("잘못된 입력입니다.")
+            else:
+                print("소요시간 : %d분"%(count*3))
+        else:
+            print("소요시간 : %d분"%(count*3))
+    else:
+        print("소요시간 : %d분"%(count*3))
+else:
+    print("소요시간 : %d분"%(count*3))
+
+
+# 두 번째 형태 : 결과는 하나뿐이니, 입력만 세번 받는다.
+count = int(input("통과하는 역의 수를 입력 >> "))
+if count < 0:
+    count = int(input("잘못되었습니다.\n통과하는 역의 수량 >> "))
+if count < 0:
+    count = int(input("잘못되었습니다.\n통과하는 역의 수량 >> "))
+if count < 0:
+    count = int(input("잘못되었습니다.\n통과하는 역의 수량 >> "))
+
+if count < 0:
     print("잘못된 입력입니다.")
 else:
-    pass_station = num * 3
-    print("소요된 시간은 총 %s 분 입니다."%(pass_station))
-
-
-
+    print("소요시간 : %d분"%(count*3))
