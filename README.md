@@ -1,5 +1,6 @@
 # <span style='color: orange'> 파이썬 공부 내용 정리</span>
 
+
 ![파이썬이미지](https://greenart.co.kr/upimage/subject/group5_7.jpg)
 
 # <span style='color: skyblue'>스터디</span>
@@ -12,13 +13,12 @@
 - 네이버 블로그 정리 : [Blog](https://blog.naver.com/donny1848/222922708704)
 
 # Language 
-![로고](https://img.shields.io/badge/python-3776AB?style=flat&logo=Python&logoColor=white)
-- Python  3.11.0
+- ![로고](https://img.shields.io/badge/python-3776AB?style=flat&logo=Python&logoColor=white)
 
 # Tools & Version
 - Visual Studio Code 1.71.0
 - Windows 10
-
+- ![파이썬버전](https://img.shields.io/pypi/pyversions/Django?label=python&logo=python&logoColor=white)
 # 사용 확장(Extension)프로그램
 - Python
 - Bracket Pair Colorizer2
@@ -43,7 +43,7 @@
 | 06 | 7일차 | 파이썬의 조건문 (if,else,elif) | [바로가기][day07] |
 | 07 | 8일차 | 파이썬 조건문 문제 풀이 | [바로가기][day08] |
 | 08 | 9일차 | 파이썬의 반복문 (while) | [바로가기][day09] |
-| 09 | 10일차 | - | [바로가기][day10] |
+| 09 | 10일차 | 파이썬의 반복문 (while) 문제 풀이 | [바로가기][day10] |
 | 10 | 11일차 | - | - |
 | 11 | 12일차 | - | - |
 | 12 | 13일차 | - | - |

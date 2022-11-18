@@ -10,16 +10,13 @@
 
 """
 
-num = 0
-while num <= 40:
+num = 1
+while num*5 <= 40:
+    print(num*5,end=" ")
     num += 1
-    if num % 5 == 0:
-        print(num,end=" ")
 
 print()
-num = 0
-while num <= 40:
+num = 1
+while num*6 <= 40:
+    print(num*6,end=" ")
     num += 1
-    if num % 6 == 0:
-        print(num,end=" ")
-        
