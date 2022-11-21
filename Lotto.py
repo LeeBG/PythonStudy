@@ -6,7 +6,7 @@ startTime = time.time() # 실행시간 측정하기
 
 a = list(range(1,46)) #중복체크를 위한 리스트
 b = list()
-while(len(b)<7):
+while(len(b)<6):
     num = random.randrange(1,46) # 랜덤
     if num not in a:#중복체크
         continue
