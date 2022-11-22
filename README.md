@@ -19,6 +19,7 @@
 - Visual Studio Code 1.71.0
 - Windows 10
 - [![파이썬버전](https://img.shields.io/pypi/pyversions/Django?label=python&logo=python&logoColor=white)](https://www.python.org/downloads/release/python-3110/)
+
 # 사용 확장(Extension)프로그램
 - Python
 - Bracket Pair Colorizer2
