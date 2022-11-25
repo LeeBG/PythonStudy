@@ -11,14 +11,21 @@ lst = []
 print("--입력구간--") # 입력은 while로 받는 것이 깔끔하다.
 while tmp != 0:
     tmp = int(input("%d번 정수 >> "%(count)))
-    if tmp == 0:    # 0을 리스트에 담으면 안되기 때문!!
-        break
-    lst.append(tmp)
+    if tmp != 0:    # 0을 리스트에 담으면 안되기 때문!!
+        lst.append(tmp)
     count += 1 
-print("--출력구간--")
-print("리스트에 저장된 값들")
+    
+# 목적이 다른것들은 합치지 않는다.
 sum = 0
 for num in lst:
-    print(num,end=" ")
     sum += num
+
+print("--출력구간--")
+print("리스트에 저장된 값들")
+for num in lst:
+    print(num,end=" ")
+    # sum += num
 print("\n저장된 값들의 합 : %d"%(sum))
+
+for num in range(46):
+    print(num)
