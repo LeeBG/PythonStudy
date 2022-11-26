@@ -14,8 +14,8 @@ for i in range(2,10):
     print("%d x %d = %d"%(6,i,(6*i)))
 print()
 
-# 2. 지정한 횟수 만큼 Hello 출력
-num = input("횟수 입력 >> ")
+# 2. 지정한 횟수 만큼 Hello 출력 
+num = input("횟수 입력 >> ") # EX) 3회
 num = int(num[:-1])
 for i in range(num):
     print("Hello")
@@ -23,8 +23,15 @@ for i in range(num):
 
 # 3. 내가 입력한 정수가 소수인지 아닌지 여부를 판별
 count = 0
-tmp = int("소수 판별할 숫자를 입력하세요 >> ")
+tmp = 1
+while tmp <= 1: 
+    tmp = int(input("소수 판별할 2 이상의 정수를 입력하세요 >> "))
 for i in range(1,tmp+1):
     if tmp % i == 0:
         count += 1
+
+if count == 2:
+    print("%d는 소수입니다."%(tmp))
+else:
+    print("%d는 소수가 아닙니다."%(tmp))
 
