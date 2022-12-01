@@ -7,9 +7,7 @@
 
 def make_sum_from(lst):
     result = 0
-    if len(lst) == 0:
-        result = 0
-    else:
+    if len(lst) != 0:
         for index in lst:
             result += int(index)
     return result
