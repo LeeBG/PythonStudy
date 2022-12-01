@@ -20,61 +20,76 @@
 import sys
 import os
 
-operatorList = ['+','-','*','/'] # 연산자 리스트
-lst = []          # 띄어쓰기를 제외한 식을 담을 리스트
+operatorList = ('+','-','*','x','/')  # 연산자 리스트
+history = []                          # 기록
 
-index = 0           
-history = []      # 기록
-
-# 입력받기
+# 메뉴 입력
 def input_menu():
   menu = input()
   if menu == "종료":
-    return "종료"
+    os.system("pause")
+    sys.exit()
   elif menu == "기록":
+    print("=======================")
     for i in history:
       print(i)
-    return "기록"
+    print("=======================")
+    return
   else:
     return menu
 
 
-def input_cal(menu): # 입력 검증받기
-  count = 0      # 연산자가 2번 들어가는 경우 방지
-  if menu != "종료" and menu != "기록":
-    cal = menu
-    for i in cal:
-      if i != " ":
-        lst.append(i)
-    for i in operatorList: # 검증
-      if i in lst and count <= 1:
-        count += 1
-        index = lst.index(i)
-      else:
-        print("이해할 수 없는 연산입니다.")
-        return
-    return lst
-  elif menu == "종료":
-    os.system("pause")
-    sys.exit()
+def validate(menu):  # 메뉴 처리 및 검증을 하는 함수()
+  lst = []           # 띄어쓰기를 제외한 식을 담을 리스트
+  count = 0          # 한 연산식의 연산자 갯수 카운트
+  index = 0          # 연산자가 있는 위치 인덱스 
+  num1 = ""          # 연산식의 앞의 숫자
+  num2 = ""          # 연산식의 뒤의 숫자
     
-def init_value(lst): # 숫자와 연산자 분리
-  firstNum = ""      # 첫 숫자
-  secondNum = ""     # 뒤의 숫자
-
-  for i in range(index):
-    firstNum += lst[i]
-  for i in range(index+1,len(lst)):
-    secondNum += lst[i]
-
-  firstNum = int(firstNum)
-  secondNum = int(secondNum)
-  operator = lst[index]
-
-  return firstNum,operator,secondNum
-
-
-def calculator(value):    # 계산 및 기록
+  if menu == "기록":
+    return
+  
+  else:              # 종료, 기록이 아닌 문자열 입력
+    for i in menu:
+      if i != " ":    # 공백 제거 후 리스트에 담아서
+        lst.append(i)
+    for i in lst:     # 검증 (올바른 수식인가)
+      for j in operatorList:
+        if i == j:
+          index = lst.index(i)          # 첫번쨰 수가 음수가 아닌 경우 연산자 위치
+          count +=1
+          if index == 0 and i == '-':   # 첫번쨰 수가 음수일 경우 처리
+            if '+' in lst[1:]:
+              index = lst[1:].index('+')+1 # 첫 음수기호를 제외한 나머지에서 연산자 찾기
+            elif '*' in lst[1:]:
+              index = lst[1:].index('*')+1
+            elif 'x' in lst[1:]:
+              index = lst[1:].index('x')+1 
+            elif '/' in lst[1:]:
+              index = lst[1:].index('/')+1
+            else:                        # -는 가장 마지막에(음수도 있음)
+              index = lst[1:].index('-')+1
+              
+    if count > 3 or count == 0:          # 정상적인 연산식에는 연산자 최대 3개(음수,연산자,음수)
+      print("이해할 수 없는 연산입니다.",index,count)
+      return
+    
+    # 문자열을 정수로 변환
+    for i in range(index):
+      num1 += lst[i]
+    for i in range(index+1,len(lst)):
+      num2 += lst[i]
+  try:              # 정수로 변환할 수 없는 값(빈값포함)을 수식에 집어 넣었다면..
+    num1 = int(num1)
+    num2 = int(num2)
+    operator = lst[index]         # 연산자(+,-,*,/)
+    return num1,operator,num2
+  except ValueError:                      
+    print("숫자아님 : 이해할 수 없는 연산입니다.")
+    return
+  
+# 계산 및 기록
+def calculator(value):          # 계산 및 기록을 하는 함수()
   record = ""
   result = 0
   operator = value[1]
@@ -88,19 +103,25 @@ def calculator(value):    # 계산 및 기록
     result = value[0]*value[2]
     record = "%d %s %d = %d"%(value[0],value[1],value[2],result)
   else:
-    result = value[0]/value[2]
-    record = "%d %s %d = %.2f"%(value[0],value[1],value[2],result)
+    try:
+      result = value[0]/value[2]
+      record = "%d %s %d = %.2f"%(value[0],value[1],value[2],result)
+    except ZeroDivisionError:
+      print("이해할 수 없는 연산입니다.(0으로 나누기)")
+      return
   history.append(record)
   return record
 
-# 기록
 
-# 종료
-
-def start():
-  validated_value = []
-  value = input_cal(input_menu())
-  if value is not None:
-    validated_value = list(init_value(value))
-    calculator(validated_value)
-start()
+def start_calulator() :          # 전체 로직을 총괄하는 함수
+  while True:                    # 종료메뉴 선택시 까지 무한반복
+    menu = input_menu()          # 수식을 문자열로 입력을 받는다.
+    value = validate(menu)       # 메뉴를 처리하고 올바른 값인지 검증
+    if value is not None:        # 유효한 값이라면..
+      result = calculator(value) # 계산 및 기록
+    if result is not None:       # 출력
+      print(result)
+    os.system("pause")
+    os.system("cls")
+# 실행
+start_calulator()                # 계산기 실행
