@@ -54,13 +54,15 @@
 | 16 | 17일차 | 파이썬의 함수의 정의와 호출 | [바로가기][day17] |
 | 17 | 18일차 | 파이썬의 매개변수를 활용한 함수 | [바로가기][day18] |
 | 18 | 19일차 | 파이썬의 모듈 | [바로가기][day19] |
-| 19 | 20일차 | - | [바로가기][day20] |
+| 19 | 20일차 | 파이썬 계산기 만들기 | [바로가기][day20] |
 
 ## <span style='color: ffdce0'>따로 만들어보기</span>
 | <span style='color:#f5f0ff'>번호</span> | <span style='color:#f5f0ff'>일차</span> | <span style='color:#f5f0ff'>내용<span> | <span style='color:#f5f0ff'>소스코드<span> | 
 | :---: | :---: | :---: | :---: |
-| 00 | - | 랜덤을 사용하여 로또 자동 추첨기 만들기 | [바로가기][Lotto]|
-| 01 | 8일차 | 문제풀이 중 숫자 대신 문자 입력시 예외처리 사용 | [바로가기][TryExcept]|
+| 00 | - | 랜덤을 사용하여 로또 자동 추첨기 만들기 | [바로가기][Lotto] |
+| 01 | 8일차 | 문제풀이 중 숫자 대신 문자 입력시 예외처리 사용 | [바로가기][TryExcept] |
+| 02 | 20일차 | 계산기 만들기 쉬운버전 | [바로가기][calculator1] |
+| 03 | 20일차 | 계산기 만들기 어려운 버전 | [바로가기][calculator2] |
 
 [day01]: ./day01
 [day02]: ./day02
@@ -81,6 +83,8 @@
 [day17]: ./day17
 [day18]: ./day18
 [day19]: ./day19
-[day20]: ./day20
-[Lotto]: ./Lotto.py
+[day20]: ./etc
+[Lotto]: ./etc/Lotto.py
+[calculator1]: ./etc/calculator2.py
+[calculator2]: ./etc/calculator.py
 [TryExcept]:/day08/07.%EC%A1%B0%EA%B1%B4%EB%AC%B8EX7_%ED%83%80%EC%9E%85%EC%98%88%EC%99%B8.py
